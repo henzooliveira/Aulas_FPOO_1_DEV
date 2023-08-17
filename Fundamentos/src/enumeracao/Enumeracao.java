@@ -14,7 +14,9 @@ public class Enumeracao {
         
         System.out.println(usuario);
         
-        Pedido pedido = new Pedido("Pedido do usuario01", 29.29, StatusEnum.EM_PREPARACAO);
+        Pedido pedido = new Pedido("Pedido do usuario01", 29.29, StatusEnum.EM_PREPARACAO.getStatus());
+        System.out.println(pedido);
+        pedido.setStatus(StatusEnum.EM_TRANSPORTE.getStatus());
         System.out.println(pedido);
     }
 }

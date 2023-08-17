@@ -19,6 +19,10 @@ public class Pedido {
         this.status = status;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Pedido{" + "descricao=" + descricao + ", valor=" + valor + ", status=" + status + '}';
