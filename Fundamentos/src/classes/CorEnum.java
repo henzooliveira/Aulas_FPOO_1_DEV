@@ -8,10 +8,6 @@ package classes;
  *
  * @author Aluno
  */
-public class Carrx {
-    public static void main(String[] args) {
-        Carro Carro1 = new Carro("", "", CorEnum.ROXO, MarchaEnum.MARCHA_RE, true, 0, 0);
-        Carro1.andar(10);
-        System.out.println(Carro1);
-    }
+public enum CorEnum {
+    CINZA, BRANCO, VERMELHO, AZUL, AMARELO, VERDE, PRETO, BEJE, ROXO
 }

@@ -11,21 +11,37 @@ package classes;
 public class Carro {
     private String modelo;
     private String marca;
-    private String cor;
+    private CorEnum cor;
     private int ano;
     private int rodas;
+    private MarchaEnum marcha;
+    private boolean estaEmRe;
     private String situacao;
     private int velocidade;
 
-    public Carro(String modelo, String marca, String cor, int ano, int rodas) {
+    public Carro(String modelo, String marca, CorEnum cor, MarchaEnum marcha , boolean estaEmRe, int ano, int rodas) {
         this.modelo = modelo;
         this.marca = marca;
         this.cor = cor;
+        this.marcha = marcha;
+        this.estaEmRe = estaEmRe;
         this.ano = ano;
         this.rodas = rodas;
-        this.situacao = situacao;
-        this.velocidade = velocidade;
+        this.situacao = "parado";
+        this.velocidade = 0;
     }
+    public void trocarDeMarcha(MarchaEnum marcha){
+        this.marcha.getNumeroMarcha();
+    }
+    public void engatarRe(boolean re){
+        this.estaEmRe = re;
+    }
+
+    public Carro(String modelo, CorEnum cor) {
+        this.modelo = modelo;
+        this.cor = cor;
+    }
+    
      public void andar(int velocidade){
         this.situacao = "andando";
         this.velocidade = velocidade;
