@@ -14,5 +14,6 @@ public class Alunx {
         System.out.println(aluno1);
         aluno1.fazendoprova();
         System.out.println(aluno1);
+        aluno1.naoestafazendoprova();
     }
 }

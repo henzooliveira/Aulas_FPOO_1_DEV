@@ -14,12 +14,12 @@ public class Carro {
     private CorEnum cor;
     private int ano;
     private int rodas;
-    private MarchaEnum marcha;
+    private int marcha;
     private boolean estaEmRe;
     private String situacao;
     private int velocidade;
 
-    public Carro(String modelo, String marca, CorEnum cor, MarchaEnum marcha , boolean estaEmRe, int ano, int rodas) {
+    public Carro(String modelo, String marca, CorEnum cor, int marcha , boolean estaEmRe, int ano, int rodas) {
         this.modelo = modelo;
         this.marca = marca;
         this.cor = cor;
@@ -30,9 +30,18 @@ public class Carro {
         this.situacao = "parado";
         this.velocidade = 0;
     }
-    public void trocarDeMarcha(MarchaEnum marcha){
-        this.marcha.getNumeroMarcha();
+    
+    public void trocarDeMarcha(MarchaEnum novaMarcha){
+        int diferenca = novaMarcha.getNumeroMarcha() - this.marcha;
+        
+        if (diferenca == 1) {
+            this.marcha = novaMarcha.getNumeroMarcha();
+            
+        }else{
+            System.out.println("voce nao pode pular a marcha");
+        }
     }
+
     public void engatarRe(boolean re){
         this.estaEmRe = re;
     }
@@ -46,6 +55,7 @@ public class Carro {
         this.situacao = "andando";
         this.velocidade = velocidade;
     }
+     
     public void freiar(){
         this.situacao = "freiando";
         this.velocidade -= 1;                                            
